@@ -21,4 +21,7 @@ public class LoginPage {
 		System.out.println("============baseURL================ "+Constants.baseURL);
 		driver.get(Constants.baseURL);
 	}
+	public void clickLoginButton() {
+	}
+
 }
