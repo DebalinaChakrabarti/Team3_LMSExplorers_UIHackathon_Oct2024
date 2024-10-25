@@ -8,6 +8,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,7 +25,22 @@ public class ProgramPage extends Constants {
 	private By headers = By.xpath("//span[@class='mat-button-wrapper']");
 	private By manageProgramHeader = By.xpath("//div[text()=' Manage Program']");
 	private By logoutHeader = By.xpath("//span[text()='Logout']");
-	private By addNewProgramBtn= By.xpath("//button[text()='Add New Program']");
+	private By addNewProgramBtn = By.xpath("//button[text()='Add New Program']");
+	private By progcolHeaders = By.xpath("//tr/th");
+	private By multipleDelBtn = By.xpath("(//button[@ng-reflect-icon='pi pi-trash'])[1]");
+	private By searchBar = By.id("filterGlobal");
+	private By headerCheckBox = By.xpath("(//div[@class='p-checkbox p-component'])[1]");
+	private By allCheckBoxes = By.xpath("//div[@class='p-checkbox p-component']");
+	private By sorticons = By.xpath("//i[@class='p-sortable-column-icon pi pi-fw pi-sort-alt']");
+	private By editdelicons = By.xpath("//div[@class='action']");
+	private By paginator = By.xpath("//span[@class='p-paginator-current ng-star-inserted']");
+	private By prevSetofPagesMove = By.xpath(
+			"//button[@class='p-paginator-first p-paginator-element p-link p-disabled p-ripple ng-star-inserted']");
+	private By nextSetofPagesMove = By
+			.xpath("//button[@class='p-paginator-last p-paginator-element p-link p-ripple ng-star-inserted']");
+	private By nextPageMove = By.xpath("//span[@class='p-paginator-icon pi pi-angle-right']");
+	private By prevPageMove = By.xpath("//span[@class='p-paginator-icon pi pi-angle-left']");
+	private By programFooter = By.xpath("//div[@class='p-d-flex p-ai-center p-jc-between ng-star-inserted']");
 
 	public ProgramPage(WebDriver driver) {
 		this.driver = driver;
@@ -121,7 +139,7 @@ public class ProgramPage extends Constants {
 		List<WebElement> modules = driver.findElements(headers);
 		List<String> actualOrder = new ArrayList<>();
 
-		for (int i=0;i<modules.size()-1;i++) {
+		for (int i = 0; i < modules.size() - 1; i++) {
 			actualOrder.add(modules.get(i).getText());
 		}
 
@@ -134,20 +152,155 @@ public class ProgramPage extends Constants {
 		String actualValue = driver.findElement(logoutHeader).getText().trim();
 		Assert.assertEquals(logout.trim(), actualValue);
 	}
-	
-	
+
 	public void validateAddNewProgBtn(String addNewProg) {
-		
-		WebElement addNewProgram=driver.findElement(addNewProgramBtn);
+
+		WebElement addNewProgram = driver.findElement(addNewProgramBtn);
 		if (addNewProgram.isDisplayed()) {
-	        String actualValue = addNewProgram.getText().trim();
-	        Assert.assertEquals(addNewProg.trim(), actualValue);
-	    } else {
-	        Assert.fail("Add New Program button is not displayed");
-	    }
+			String actualValue = addNewProgram.getText().trim();
+			Assert.assertEquals(addNewProg.trim(), actualValue);
+		} else {
+			Assert.fail("Add New Program button is not displayed");
+		}
 	}
-	
-	
-	
+
+	public void validateManageHeader(String manageheader) {
+		String actualValue = driver.findElement(manageProgramHeader).getText().trim();
+		Assert.assertEquals(manageheader.trim(), actualValue);
+	}
+
+	public void validateColheaders(String expectedProgName, String expectedDescription, String expectedStatus) {
+		List<WebElement> tableHeaders = driver.findElements(progcolHeaders);
+		List<String> actualColheaders = new ArrayList<>();
+
+		for (int i = 1; i < tableHeaders.size() - 1; i++) {
+			actualColheaders.add(tableHeaders.get(i).getText());
+		}
+
+		Assert.assertTrue(actualColheaders.contains(expectedProgName), "Program Name header not found!");
+		Assert.assertTrue(actualColheaders.contains(expectedDescription), "Program Description header not found!");
+		Assert.assertTrue(actualColheaders.contains(expectedStatus), "Program Status header not found!");
+
+	}
+
+	public boolean validateMultipleDeleteBtnDisabled() {
+		try {
+			return !driver.findElement(multipleDelBtn).isEnabled();
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+
+	public void validateSearchBar(String expectedSearchPlaceholder) {
+		if (driver.findElement(searchBar).isDisplayed()) {
+			WebElement searchText = driver.findElement(searchBar);
+			String actualSearchPlaceholder = searchText.getAttribute("placeholder");
+			Assert.assertEquals(expectedSearchPlaceholder, actualSearchPlaceholder);
+		}
+	}
+
+	public void validateAllColHeaders(String expectedProgName, String expectedDescription, String expectedStatus,
+			String expectedEditdel) {
+		List<WebElement> tableHeaders = driver.findElements(progcolHeaders);
+		List<String> actualColheaders = new ArrayList<>();
+
+		for (int i = 1; i < tableHeaders.size(); i++) {
+			actualColheaders.add(tableHeaders.get(i).getText());
+		}
+
+		Assert.assertTrue(actualColheaders.contains(expectedProgName), "Program Name header not found!");
+		Assert.assertTrue(actualColheaders.contains(expectedDescription), "Program Description header not found!");
+		Assert.assertTrue(actualColheaders.contains(expectedStatus), "Program Status header not found!");
+		Assert.assertTrue(actualColheaders.contains(expectedEditdel), "Program Edit/Delete header not found!");
+
+	}
+
+	public boolean validateheaderCheckBoxUnchecked() {
+		try {
+			return !driver.findElement(headerCheckBox).isSelected();
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+
+	public boolean validateAllCheckBoxesUnchecked() {
+		try {
+			List<WebElement> uncheckedBoxes = driver.findElements(allCheckBoxes);
+			for (int i = 1; i < uncheckedBoxes.size(); i++) {
+				if (uncheckedBoxes.get(i).isSelected())
+					return false;
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean validateSortIcons() {
+		try {
+			List<WebElement> sortIcons = driver.findElements(sorticons);
+
+			for (int i = 0; i < sortIcons.size(); i++) {
+				if (sortIcons.get(i).isDisplayed())
+					return true;
+			}
+
+		} catch (Exception e) {
+			return false;
+		}
+		return false;
+	}
+
+	public boolean validateEditDelIcons() {
+		try {
+			List<WebElement> editDelIcons = driver.findElements(editdelicons);
+
+			for (int i = 0; i < editDelIcons.size(); i++) {
+				if (editDelIcons.get(i).isDisplayed())
+					return true;
+			}
+
+		} catch (Exception e) {
+			return false;
+		}
+		return false;
+	}
+
+	public void validatePaginationTextandIcons(String text) {
+		WebElement paginatorElement = driver.findElement(paginator);
+		boolean areIconsPresent = driver.findElement(prevPageMove).isDisplayed()
+				&& driver.findElement(prevSetofPagesMove).isDisplayed()
+				&& driver.findElement(nextPageMove).isDisplayed()
+				&& driver.findElement(nextSetofPagesMove).isDisplayed();
+		try {
+			if (areIconsPresent) {
+				String textValidation = paginatorElement.getText();
+				Pattern pattern = Pattern.compile("\\d+");
+				Matcher matcher = pattern.matcher(textValidation);
+				List<Integer> numericValues = new ArrayList<Integer>();
+				while (matcher.find()) {
+					int numericValue = Integer.parseInt(matcher.group());
+					numericValues.add(numericValue);
+				}
+				text = String.format("Showing %d to %d of %d entries", numericValues.get(0), numericValues.get(1),
+						numericValues.get(2));
+				log.info(text);
+				Assert.assertEquals(text, textValidation);
+			}
+		} catch (Exception e) {
+			log.error("Pagination Icons are not displayed" + e);
+		}
+	}
+
+	public void validateFooter(String count) {
+
+		String tot_cnt = driver.findElement(programFooter).getText();
+		count = tot_cnt.replaceAll("\\D+", "");
+		Integer.parseInt(count.trim());
+		Assert.assertEquals(tot_cnt, "In total there are " + count + " programs.");
+
+	}
 
 }
