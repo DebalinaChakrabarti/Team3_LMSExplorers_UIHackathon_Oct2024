@@ -192,5 +192,70 @@ public class ExcelReader {
 		fis.close();
 		return data;
 	}
+	public List<String> getRowData(String sheetName,int filterColumnIndex,String filterValue) throws IOException
+	{
+
+		System.out.println("-----------path=-------------"+path);
+		fis=new FileInputStream(path);
+		workbook=new XSSFWorkbook(fis);
+		sheet=workbook.getSheet(sheetName);
+
+		
+		// Get sheet with sheet name
+        sheet=workbook.getSheet(sheetName);
+        
+        List<String> rowData = new ArrayList<>();
+
+        
+		DataFormatter formatter = new DataFormatter();
+		String data;
+		int i = 0;
+		
+		
+        // Iterate over the rows
+
+		for (Row row : sheet) {
+
+	    	// Get the cell in the column you want to filter by
+	        Cell filterCell = row.getCell(filterColumnIndex);
+
+	        // Check if the cell contains the filter value
+            if (filterCell != null && filterCell.getCellType() == CellType.STRING && filterCell.getStringCellValue().equals(filterValue)) {
+
+       		 short minColIx = row.getFirstCellNum();
+       		 short maxColIx = row.getLastCellNum();
+       		 
+       	// Get the whole row or perform actions with the matching row  
+       		 
+       		 for(short colIx=minColIx; colIx<maxColIx; colIx++) {
+       		   Cell cell = row.getCell(colIx);
+      			i++;
+       		   if(cell == null) {
+	       		     data = "";
+	       		  System.out.print(data + "\t");
+	       		  }
+       		   else {
+	           		try{
+	       			data = formatter.formatCellValue(cell); //Returns the formatted value of a cell as a String regardless of the cell type.
+	            	System.out.print(data + "\t");
+	                   
+	       		}
+	       		catch(Exception e)
+	       		{
+	       			data="";
+	       		}
+	       	}
+      			rowData.add(data);
+       	}    	
+            	
+                System.out.println();
+                System.out.println("no of columns="+i);
+                System.out.println("row.getLastCellNum()="+row.getLastCellNum());
+            }
+        }
+		workbook.close();
+		fis.close();
+		return rowData;
+	}
 
 }
