@@ -1,0 +1,330 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>50/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Oct 27 07:18:58 CDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>653 seconds (653280 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to close the window with "X"", "Delete Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Add New Program"</td>
+<td></td>
+<td>21</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit program", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify enter program name", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify sub menu displayed in program menu bar", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify other modules name displayed in menu bar", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to deleted program", "Delete Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify close window with "X"", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify select Status", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Add New Program"</td>
+<td></td>
+<td>21</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify view details of programs", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify empty form submission", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify checkbox default state beside Program Name column header", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit and delete icon in manage program", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit program", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify heading in manage program", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Delete Button", "Delete Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edited Program details are updated", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that Admin is able to navigate to Program module", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify title of the pop up window", "Add New Program"</td>
+<td></td>
+<td>21</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify title of the pop up window", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit program", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify pagination icons below data table in manage program", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify close window with "X"", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Search button", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Edit option", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify empty form submission", "Add New Program"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to save the program details", "Add New Program"</td>
+<td></td>
+<td>14</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click 'No'", "Delete Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Add New Program"</td>
+<td></td>
+<td>21</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify select Status", "Add New Program"</td>
+<td></td>
+<td>13</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Logout displayed in menu bar", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Multiple Delete button state", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Sort icon in manage program", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify add New Program", "Add New Program"</td>
+<td></td>
+<td>21</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify heading in menu bar", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red "*" mark", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click 'Yes'", "Delete Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify cancel button", "Add New Program"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify column header name of data table", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to land on login page", "Login"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin able to click cancel button", "Edit Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify empty form submission", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify checkboxes default state beside each Program names in the data table", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify footer message in manage program", "Program Module"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify enter description", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify added Program is created", "Add New Program"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify any broken links on program page", "Program Module"</td>
+<td></td>
+<td>12</td>
+<td>runner.TestRunner@68878f6d</td></tr>
+</table><p>
+</body>
+</html>

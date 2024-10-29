@@ -1,0 +1,2108 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">DSAlgo Project Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Oct 27, 2024 07:18:58 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Oct 27, 2024 07:18:58 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Oct 27, 2024 07:29:46 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>5</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>5</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>50</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>221</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Login":3.461,"Program Module":194.213,"Add New Program":246.45,"Edit Program":137.596,"Delete Program":61.46
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>LMS</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Team LMS Explorers</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows10</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 5,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 50,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 221,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login</p>
+            <p class="text-sm">
+              <span>7:19:02 AM</span> / <span>00:00:03:461</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login</h5>
+<span class='badge badge-success'>10.27.2024 7:19:02 AM</span>
+<span class='badge badge-danger'>10.27.2024 7:19:05 AM</span>
+<span class='badge badge-default'>00:00:03:461</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to land on login page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.admin_launch_the_browser()">
+                <span>Given Admin launch the browser</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.admin_gives_the_correct_lms_portal_url()">
+                <span>When Admin gives the correct LMS portal URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.admin_should_land_on_the_login_page()">
+                <span>Then Admin should land on the login page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Program Module</p>
+            <p class="text-sm">
+              <span>7:19:06 AM</span> / <span>00:03:14:213</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Program Module</h5>
+<span class='badge badge-success'>10.27.2024 7:19:06 AM</span>
+<span class='badge badge-danger'>10.27.2024 7:22:20 AM</span>
+<span class='badge badge-default'>00:03:14:213</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>Verify that Admin is able to navigate to Program module</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_be_navigated_to_program_module()">
+                <span>Then Admin should be navigated to Program module</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Verify any broken links on program page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_not_have_any_broken_links_for_program_module()">
+                <span>Then Admin should not have any broken links for Program module</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="20"><span class="badge log pass-bg mr-2">Pass</span>Verify heading in menu bar</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_heading(java.lang.String)">
+                <span>Then Admin should see the heading "LMS - Learning Management System"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>Verify other modules name displayed in menu bar</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_module_names_as_in_order(java.lang.String)">
+                <span>Then Admin should see the module names as in order "Program Batch Class"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>Verify Logout displayed in menu bar</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_in_menu_bar(java.lang.String)">
+                <span>Then Admin should see "Logout" in menu bar</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>Verify sub menu displayed in program menu bar</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_sub_menu_in_menu_bar_as(java.lang.String)">
+                <span>Then Admin should see sub menu in menu bar as "Add New Program"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="44"><span class="badge log pass-bg mr-2">Pass</span>Verify heading in manage program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_heading_as(java.lang.String)">
+                <span>Then Admin should see the heading as "Manage Program"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Verify view details of programs</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_able_to_see_program_name_description_and_status_for_each_program()">
+                <span>Then Admin should able to see Program name, description, and status for each program</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="56"><span class="badge log pass-bg mr-2">Pass</span>Verify the Multiple Delete button state</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_a_delete_button_in_left_top_is_disabled()">
+                <span>Then Admin should see a Delete button in left top is disabled</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>Verify the Search button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_search_bar_with_text_as(java.lang.String)">
+                <span>Then Admin should see Search bar with text as "Search..."</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="68"><span class="badge log pass-bg mr-2">Pass</span>Verify column header name of data table</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_data_table_with_column_header_on_the_manage_program_page_as_program_name_program_description_program_status_edit_delete()">
+                <span>Then Admin should see data table with column header on the Manage Program Page as  Program Name, Program Description, Program Status, Edit/Delete</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="74"><span class="badge log pass-bg mr-2">Pass</span>Verify checkbox default state beside Program Name column header</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_checkbox_default_state_as_unchecked_beside_program_name_column_header()">
+                <span>Then Admin should see checkbox default state as unchecked beside Program Name column header</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="80"><span class="badge log pass-bg mr-2">Pass</span>Verify checkboxes default state beside each Program names in the data table</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_check_box_default_state_as_unchecked_on_the_left_side_in_all_rows_against_program_name()">
+                <span>Then Admin should see check box default state as unchecked on the left side in all rows against program name</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>Verify Sort icon in manage program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_sort_arrow_icon_beside_to_each_column_header_except_edit_and_delete()">
+                <span>Then Admin should see the sort arrow icon beside to each column header except Edit and Delete</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="92"><span class="badge log pass-bg mr-2">Pass</span>Verify edit and delete icon in manage program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_edit_and_delete_buttons_on_each_row_of_the_data_table()">
+                <span>Then Admin should see the Edit and Delete buttons on each row of the data table</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="98"><span class="badge log pass-bg mr-2">Pass</span>Verify pagination icons below data table in manage program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_text_as_showing_x_to_y_of_z_entries_along_with_pagination_icon_below_the_table(java.lang.String)">
+                <span>Then Admin should see the text as "Showing x to y of z entries" along with Pagination icon below the table.</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="104"><span class="badge log pass-bg mr-2">Pass</span>Verify footer message in manage program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_navigation_bar(java.lang.String)">
+                <span>When Admin clicks "Program" on the navigation bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_the_footer_as_in_total_there_are_z_programs(java.lang.String)">
+                <span>Then Admin should see the footer as "In total there are z programs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="110"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add New Program</p>
+            <p class="text-sm">
+              <span>7:22:20 AM</span> / <span>00:04:06:450</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add New Program</h5>
+<span class='badge badge-success'>10.27.2024 7:22:20 AM</span>
+<span class='badge badge-danger'>10.27.2024 7:26:26 AM</span>
+<span class='badge badge-default'>00:04:06:450</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=110</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>Verify add New Program</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_module_for_adding_program()">
+                <span>Given Admin is on Program module for adding program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_under_the_menu_bar(java.lang.String,java.lang.String)">
+                <span>When Admin clicks on "Add New Program" under the "Program" menu bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_pop_up_window_for_program_details()">
+                <span>Then Admin should see pop up window for program details</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="118"><span class="badge log pass-bg mr-2">Pass</span>Verify title of the pop up window</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_module_for_adding_program()">
+                <span>Given Admin is on Program module for adding program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_under_the_menu_bar(java.lang.String,java.lang.String)">
+                <span>When Admin clicks on "Add New Program" under the "Program" menu bar</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_window_title_as(java.lang.String)">
+                <span>Then Admin should see window title as "Program Details"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="125"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="126"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program module for adding program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Add New Program" under the "Program" menu bar</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Program name'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="133"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program module for adding program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Add New Program" under the "Program" menu bar</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Description'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="140"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program module for adding program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Add New Program" under the "Program" menu bar</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Status'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="147"><span class="badge log pass-bg mr-2">Pass</span>Verify empty form submission</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="148"><span class="badge log pass-bg mr-2">Pass</span>Verify empty form submission</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks save button without entering mandatory</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin gets message 'Program name is required.'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="155"><span class="badge log pass-bg mr-2">Pass</span>Verify empty form submission</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks save button without entering mandatory</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin gets message 'Description is required.'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="162"><span class="badge log pass-bg mr-2">Pass</span>Verify empty form submission</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks save button without entering mandatory</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin gets message 'Status is required.'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="169"><span class="badge log pass-bg mr-2">Pass</span>Verify cancel button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_form()">
+                <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_cancel_button()">
+                <span>When Admin clicks Cancel button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_program_details_form_disappears()">
+                <span>Then Admin can see Program Details form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="176"><span class="badge log pass-bg mr-2">Pass</span>Verify enter program name</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_form()">
+                <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_enters_the_name_in_the_text_box()">
+                <span>When Admin enters the Name in the text box</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_the_text_entered()">
+                <span>Then Admin can see the text entered</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="183"><span class="badge log pass-bg mr-2">Pass</span>Verify enter description</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_form()">
+                <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_enters_the_description_in_text_box()">
+                <span>When Admin enters the Description in text box</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_the_text_entered_in_description_box()">
+                <span>Then Admin can see the text entered in description box</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="190"><span class="badge log pass-bg mr-2">Pass</span>Verify select Status</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="191"><span class="badge log pass-bg mr-2">Pass</span>Verify select Status</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin selects the status of the program by clicking on the radio button "Active"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin can see "Active" status selected</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="198"><span class="badge log pass-bg mr-2">Pass</span>Verify select Status</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin selects the status of the program by clicking on the radio button "Inactive"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin can see "Inactive" status selected</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="205"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to save the program details</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="206"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to save the program details</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin enters valid details for mandatory fields from "Program" with scenario name "addNewProgramWithValidData" and clicks on the save button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin gets message for new program for each "Program" and  "addNewProgramWithValidData"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="213"><span class="badge log pass-bg mr-2">Pass</span>Verify added Program is created</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="214"><span class="badge log pass-bg mr-2">Pass</span>Verify added Program is created</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin searches with newly created program name from "Program" with scenario name "searchingTheAddedProgram"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Records of the newly created program name is displayed from "Program" with scenario name "searchingTheAddedProgram"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="220"><span class="badge log pass-bg mr-2">Pass</span>Verify close window with "X"</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_form()">
+                <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_click_on_button(java.lang.String)">
+                <span>When Admin Click on "X" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_program_details_form_disappears()">
+                <span>Then Admin can see Program Details form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="227"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Edit Program</p>
+            <p class="text-sm">
+              <span>7:26:26 AM</span> / <span>00:02:17:596</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Edit Program</h5>
+<span class='badge badge-success'>10.27.2024 7:26:26 AM</span>
+<span class='badge badge-danger'>10.27.2024 7:28:44 AM</span>
+<span class='badge badge-default'>00:02:17:596</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=227</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="228"><span class="badge log pass-bg mr-2">Pass</span>Verify Edit option</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_for_particular_program(java.lang.String)">
+                <span>When Admin clicks on "Edit Option" for particular program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_pop_up_window_for_program_details()">
+                <span>Then Admin should see pop up window for program details</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="234"><span class="badge log pass-bg mr-2">Pass</span>Verify title of the pop up window</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_for_particular_program(java.lang.String)">
+                <span>When Admin clicks on "Edit Option" for particular program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_should_see_window_title_as(java.lang.String)">
+                <span>Then Admin should see window title as "Program Details"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="240"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="241"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Edit Option" for particular program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Program name'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="247"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Edit Option" for particular program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Description'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="253"><span class="badge log pass-bg mr-2">Pass</span>Verify mandatory fields with red "*" mark</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Edit Option" for particular program</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin should see red "*" mark beside mandatory field 'Status'</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="259"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin able to click cancel button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_for_window()">
+                <span>Given Admin is on program details window</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_cancel_button()">
+                <span>When Admin clicks Cancel button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_program_details_form_disappears()">
+                <span>Then Admin can see Program Details form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="266"><span class="badge log pass-bg mr-2">Pass</span>Verify edit program</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="267"><span class="badge log pass-bg mr-2">Pass</span>Verify edit program</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on program details window</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin edits the program and click on save button from "Program" with scenario name "editProgramWithProgramName"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Updated program name is seen by the Admin from "Program" with scenario name "editProgramWithProgramName"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="274"><span class="badge log pass-bg mr-2">Pass</span>Verify edit program</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on program details window</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin edits the program and click on save button from "Program" with scenario name "editProgramWithProgramDescription"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Updated program name is seen by the Admin from "Program" with scenario name "editProgramWithProgramDescription"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="281"><span class="badge log pass-bg mr-2">Pass</span>Verify edit program</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on program details window</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin edits the program and click on save button from "program" with scenario name "editProgramWithProgramStatus"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Updated program name is seen by the Admin from "program" with scenario name "editProgramWithProgramStatus"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="288"><span class="badge log pass-bg mr-2">Pass</span>Verify edited Program details are updated</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="289"><span class="badge log pass-bg mr-2">Pass</span>Verify edited Program details are updated</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin searches with newly updated Program Name from "Program" with scenario name "searchingTheUpdatedProgram"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin verifies that the details are correctly updated from "Program" with scenario name "searchingTheUpdatedProgram"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="295"><span class="badge log pass-bg mr-2">Pass</span>Verify close window with "X"</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_program_details_form()">
+                <span>Given Admin is on Program details form</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_click_on_button(java.lang.String)">
+                <span>When Admin Click on "X" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_program_details_form_disappears()">
+                <span>Then Admin can see Program Details form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="302"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Delete Program</p>
+            <p class="text-sm">
+              <span>7:28:44 AM</span> / <span>00:01:01:460</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Delete Program</h5>
+<span class='badge badge-success'>10.27.2024 7:28:44 AM</span>
+<span class='badge badge-danger'>10.27.2024 7:29:45 AM</span>
+<span class='badge badge-default'>00:01:01:460</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=302</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="303"><span class="badge log pass-bg mr-2">Pass</span>Verify Delete Button</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_delete_button_for_a_program()">
+                <span>When Admin clicks on delete button for a program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_will_get_confirm_deletion_popup()">
+                <span>Then Admin will get confirm deletion popup</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="309"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to click 'Yes'</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="310"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to click 'Yes'</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin searches with newly updated Program Name from "Program" with scenario name "deletingTheUpdatedProgram"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin clicks on "Yes" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Admin can see 'Successful Program Deleted' message</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="317"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to deleted program</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="318"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to deleted program</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Admin Searches for Deleted Program name from "Program" with scenario name "searchingTheDeletedProgram"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then There should be zero results.</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="324"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to click 'No'</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_the_button(java.lang.String)">
+                <span>When Admin clicks on the "No" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_confirmation_form_disappears()">
+                <span>Then Admin can see Confirmation form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="330"><span class="badge log pass-bg mr-2">Pass</span>Verify Admin is able to close the window with "X"</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_logged_in_to_lms_portal()">
+                <span>Given Admin is logged in to LMS Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_is_on_dashboard_page_after_Loggingin()">
+                <span>Given Admin is on dashboard page after Loggingin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicks_on_delete_button_for_a_program()">
+                <span>When Admin clicks on delete button for a program</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_clicked_on_button(java.lang.String)">
+                <span>When Admin Clicked on "X" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.ProgramPageSteps.admin_can_see_confirmation_form_disappears()">
+                <span>Then Admin can see Confirmation form disappears</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
