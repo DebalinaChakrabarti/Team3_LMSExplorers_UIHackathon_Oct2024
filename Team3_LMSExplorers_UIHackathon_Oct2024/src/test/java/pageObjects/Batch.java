@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
-import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,43 +20,43 @@ import org.testng.Assert;
 
 import utilities.Constants;
 
-public class Program extends Constants {
+public class Batch extends Constants {
 
 	WebDriver driver;
-	private By programLink = By.id("program");
-    private By programHeaderName = By.xpath("//*[contains(text(),'Manage Program')]");
+	private By batchLink = By.xpath("//*[text()='Batch']");
+    private By batchHeaderName = By.xpath("//*[contains(text(),'Manage Batch')]");
 	private By logoutLink = By.id("logout");
 	
 //Searchbar elements
 	
 	private By searchTextBox = By.id("filterGlobal");
-    private By programNameFirstRecord=By.xpath("//tr[1]/td[2]");
-    private By programDescFirstRecord=By.xpath("//tr[1]/td[3]");
-    private By programStatusFirstRecord=By.xpath("//tr[1]/td[4]");
+    private By batchNameFirstRecord=By.xpath("//tr[1]/td[2]");
+    private By batchDescFirstRecord=By.xpath("//tr[1]/td[3]");
+    private By batchStatusFirstRecord=By.xpath("//tr[1]/td[4]");
     private By paginationTextwithZeroRecord=By.xpath("//*[contains(text(),'Showing 0 to 0 of 0 entries')]");
 
-//Multi Delete Program elements
+//Multi Delete Batch elements
     
-  private By programFirstRecordChk=By.xpath("//table[1]/tbody[1]/tr[1]/td[1]//div[1]/div[2]");
-  private By programSecondRecordChk=By.xpath("//tr[2]/td[1]/p-tablecheckbox/div/div[2]");
+  private By batchFirstRecordChk=By.xpath("//table[1]/tbody[1]/tr[1]/td[1]//div[1]/div[2]");
+  private By batchSecondRecordChk=By.xpath("//tr[2]/td[1]/p-tablecheckbox/div/div[2]");
   private By commonDeleteButton=By.xpath("//button[@class='p-button-danger p-button p-component p-button-icon-only']");
   private By confirmFormText=By.xpath("//span[contains(@class, 'p-dialog-title')]");
-  private By programNameSecondRecord=By.xpath("//tr[2]/td[2]");
-  private By programNameList = By.xpath("//tr/td[2]");
+  private By batchNameSecondRecord=By.xpath("//tr[2]/td[2]");
+  private By batchNameList = By.xpath("//tr/td[2]");
   private By yesButton = By.xpath("//*[text()='Yes']");
   private By toastMsgElement = By.xpath("//div[contains(@class, 'p-toast-detail')]");
   private By noButton = By.xpath("//*[text()='No']");
   private By XcloseButtonConfirmForm = By.xpath("//button[contains(@class, 'p-dialog-header-close')]");
 
-  private static List<String> targetedDeleteProgramNames = new ArrayList<String>();
+  private static List<String> targetedDeleteBatchNames = new ArrayList<String>();
   
 //Sorting Program Element
 
-	private By programNameColumnHeader = By.xpath("//tr/th[2]");
-	private By programDescColumnHeader = By.xpath("//tr/th[3]");
-	private By programDescList = By.xpath("//tr/td[3]");
-	private By programStatuscColumnHeader = By.xpath("//tr/th[4]");
-	private By programStatusList = By.xpath("//tr/td[4]");
+	private By batchNameColumnHeader = By.xpath("//tr/th[2]");
+	private By batchDescColumnHeader = By.xpath("//tr/th[3]");
+	private By batchDescList = By.xpath("//tr/td[3]");
+	private By batchStatuscColumnHeader = By.xpath("//tr/th[4]");
+	private By batchStatusList = By.xpath("//tr/td[4]");
 
 //Pagination elements
 	
@@ -69,10 +67,10 @@ public class Program extends Constants {
 	private By firstPageButton = By.xpath("//button[text()='1']");
 
 	
-  public Program(WebDriver driver){
+  public Batch(WebDriver driver){
 		this.driver = driver;
 	}
-	public String getProgramPageTitle()
+	public String getBatchPageTitle()
 	{
 		return driver.getTitle();
 	}
@@ -82,15 +80,15 @@ public class Program extends Constants {
 		return driver.getCurrentUrl();
 	}
 	
-	public String getProgramHeaderName() {
-		return driver.findElement(programHeaderName).getText();
+	public String getBatchHeaderName() {
+		return driver.findElement(batchHeaderName).getText();
 	}
 	
-	public void clickProgramLink() {
+	public void clickBatchLink() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 		// Wait for program link element to be clickable, then click
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(programLink)));				
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(batchLink)));				
 	}
 	public boolean checkLogoutLink() {
         return driver.findElement(logoutLink).isDisplayed();
@@ -101,35 +99,63 @@ public class Program extends Constants {
 	
 	///////////////////////////////Multiple Delete Feature methods///////////////////////////////
 	
-	public void selectMultipleProgramChk() throws InterruptedException {
+	public void selectOneBatchChk() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		// Wait for program link element to be clickable, then click
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(batchFirstRecordChk)));				
+	}
+
+	public String isSelectedBatchChk() {
+        String isSelected = driver.findElement(batchFirstRecordChk).getAttribute("aria-checked");
+        System.out.println("Is checkbox selected? " + isSelected);
+        return isSelected;
+	}
+
+	public void selectMultipleBatchChk() {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(programLink)));				
+		// Wait for program link element to be clickable, then click
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(batchLink)));				
 
 		// Wait for first record checkbox element to be clickable, then click
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(programFirstRecordChk)));		
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(batchFirstRecordChk)));		
 
 		// Wait for second record checkbox element to be clickable, then click
-		WebElement programSecondRecordChkElement = wait.until(ExpectedConditions.elementToBeClickable(programSecondRecordChk));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", programSecondRecordChkElement);		
+		WebElement batchSecondRecordChkElement = wait.until(ExpectedConditions.elementToBeClickable(batchSecondRecordChk));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", batchSecondRecordChkElement);		
 	}
 
-	public boolean isSelectedMultipleProgramChk() {
+	public boolean isSelectedMultipleBatchChk() {
 		boolean isSelected = false;
-        String isSelectedProgramFirstRecordChk = driver.findElement(programFirstRecordChk).getAttribute("aria-checked");
-        String isSelectedProgramSecondRecordChk = driver.findElement(programSecondRecordChk).getAttribute("aria-checked");
-        System.out.println("Is checkbox selected? " + isSelectedProgramFirstRecordChk + " " +isSelectedProgramSecondRecordChk);
-        if (isSelectedProgramFirstRecordChk.equalsIgnoreCase("true") && isSelectedProgramSecondRecordChk.equalsIgnoreCase("true"))
+        String isSelectedBatchFirstRecordChk = driver.findElement(batchFirstRecordChk).getAttribute("aria-checked");
+        String isSelectedBatchSecondRecordChk = driver.findElement(batchSecondRecordChk).getAttribute("aria-checked");
+        System.out.println("Is checkbox selected? " + isSelectedBatchFirstRecordChk + " " +isSelectedBatchSecondRecordChk);
+        if (isSelectedBatchFirstRecordChk.equalsIgnoreCase("true") && isSelectedBatchSecondRecordChk.equalsIgnoreCase("true"))
         	isSelected = true;
         return isSelected;
 	}
 
 	public boolean isEnabledCommonDeleteBtn() {
-        boolean isEnabled = driver.findElement(commonDeleteButton).isEnabled();
-        System.out.println("isEnabledCommonDeleteBtn? " + isEnabled);
-        return isEnabled;
+      boolean isEnabled = driver.findElement(commonDeleteButton).isEnabled();
+      System.out.println("isEnabledCommonDeleteBtn? " + isEnabled);
+      return isEnabled;
 	}
+	
+	public String isDisabledCommonDeleteBtn() {
+		WebElement deleteButton = driver.findElement(commonDeleteButton);
+		String isDisabled = deleteButton.getAttribute("disabled");
+
+		if (isDisabled == null) {
+		    System.out.println("The button is enabled." +isDisabled);
+		} else {
+		    System.out.println("The button is disabled." +isDisabled);
+		}	
+		return isDisabled;
+	}
+
+	
 	public void clickCommonDeleteButton() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		WebElement commonDeleteButtonElement = wait.until(ExpectedConditions.elementToBeClickable(commonDeleteButton));
@@ -142,10 +168,10 @@ public class Program extends Constants {
         return isCommonDeleteConfirmForm;
 	}
 
-	//List of program name of one page
-	public List<String> getOriginalProgramNameList() {
+	//List of batch name of one page
+	public List<String> getOriginalBatchNameList() {
 		  //capture all the web elements into list
-		  List<WebElement> elementsList = driver.findElements(programNameList);
+		  List<WebElement> elementsList = driver.findElements(batchNameList);
 		  
 		  //capture text of all elements into new(original) list
 		  List<String> originalList = elementsList.stream().map(s->s.getText().toLowerCase().trim()).collect(Collectors.toList());
@@ -154,17 +180,54 @@ public class Program extends Constants {
 		  return originalList;
 	}
 
-	public boolean commonDeleteMultipleAlertConfirmYes() throws InterruptedException {
+	public boolean commonDeleteAlertConfirmYes() throws InterruptedException {
 		
-		//adding targeted multiple selected programs to be deleted in a list
-		targetedDeleteProgramNames.add(driver.findElement(programNameFirstRecord).getText().toLowerCase().trim());
-		targetedDeleteProgramNames.add(driver.findElement(programNameSecondRecord).getText().toLowerCase().trim());
-		System.out.println("=======targetedDeleteProgramNames======= "+targetedDeleteProgramNames);
+		//storing selected batch to be deleted in a string
+		String targetedDeleteBatchName = driver.findElement(batchNameFirstRecord).getText().toLowerCase().trim();
+		System.out.println("targetedDeleteProgramName "+targetedDeleteBatchName);
 		
 		// Get the current window handle
 		String currentWindowHandle = driver.getWindowHandle();
 		// Get all window handles
 		Set<String> allWindowHandles = driver.getWindowHandles();
+
+		// Iterate through all handles
+		for (String handle : allWindowHandles) {
+		    // Switch to the window
+		    driver.switchTo().window(handle);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+			// Wait for batch link element to be clickable, then click
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", wait.until(ExpectedConditions.elementToBeClickable(yesButton)));				
+		    
+		}
+
+		// Switch back to the original window
+		driver.switchTo().window(currentWindowHandle);
+		
+		Thread.sleep(1000);
+		
+		//check selected program is deleted from the data table
+		List<String> originalBatchNameList = getOriginalBatchNameList();
+		System.out.println("commonDeleteAlertConfirmYes getOriginalBatchNameList "+originalBatchNameList);
+
+		boolean isDeleted = !originalBatchNameList.contains(targetedDeleteBatchName);
+		System.out.println("isDeleted "+isDeleted);
+		
+		return isDeleted;
+	}
+	public boolean commonDeleteMultipleAlertConfirmYes() throws InterruptedException {
+		
+		//adding targeted multiple selected programs to be deleted in a list
+		targetedDeleteBatchNames.add(driver.findElement(batchNameFirstRecord).getText().toLowerCase().trim());
+		targetedDeleteBatchNames.add(driver.findElement(batchNameSecondRecord).getText().toLowerCase().trim());
+		System.out.println("=======targetedDeleteProgramNames======= "+targetedDeleteBatchNames);
+		
+		// Get the current window handle
+		String currentWindowHandle = driver.getWindowHandle();
+		// Get all window handles
+		Set<String> allWindowHandles = driver.getWindowHandles();
+		Thread.sleep(1000);
 
 		// Iterate through all handles
 		for (String handle : allWindowHandles) {
@@ -179,12 +242,12 @@ public class Program extends Constants {
 		
 		Thread.sleep(1000);
 				
-		//check if selected programs are deleted from the data table
-		List<String> originalProgramNameList = getOriginalProgramNameList();
-		System.out.println("commonDeleteMultipleAlertConfirmYes getOriginalProgramNameList "+originalProgramNameList);
+		//check if selected batches are deleted from the data table
+		List<String> originalBatchNameList = getOriginalBatchNameList();
+		System.out.println("commonDeleteMultipleAlertConfirmYes getOriginalBatchNameList "+originalBatchNameList);
 
-		boolean isDeleted = !originalProgramNameList.containsAll(targetedDeleteProgramNames);
-		System.out.println("Selected programs are Deleted "+isDeleted);
+		boolean isDeleted = !originalBatchNameList.containsAll(targetedDeleteBatchNames);
+		System.out.println("Selected batches are Deleted "+isDeleted);
 		
 		return isDeleted;
 	}
@@ -202,19 +265,19 @@ public class Program extends Constants {
 	
 	public void searchMultipleDeletedProgram() throws InterruptedException {
 		
-		//Searching by Deleted Program Name
-		System.out.println("=======targetedDeleteProgramNames======= "+targetedDeleteProgramNames);
+		//Searching by Deleted Batch Name
+		System.out.println("=======targetedDeleteProgramNames======= "+targetedDeleteBatchNames);
 
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	 // Search for the first program name
-	    driver.findElement(searchTextBox).sendKeys(targetedDeleteProgramNames.get(0));
+	    driver.findElement(searchTextBox).sendKeys(targetedDeleteBatchNames.get(0));
 	    wait.until(ExpectedConditions.textToBePresentInElementLocated(paginationTextwithZeroRecord, "Showing 0 to 0 of 0 entries"));
 		Assert.assertTrue(driver.findElement(paginationTextwithZeroRecord).getText().trim().contains("Showing 0 to 0 of 0 entries"),"Showing 0 to 0 of 0 entries");
 		clearSearchBox();
 		
 		// Search for the second program name
-		driver.findElement(searchTextBox).sendKeys(targetedDeleteProgramNames.get(1));
+		driver.findElement(searchTextBox).sendKeys(targetedDeleteBatchNames.get(1));
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(paginationTextwithZeroRecord, "Showing 0 to 0 of 0 entries"));
 		Assert.assertTrue(driver.findElement(paginationTextwithZeroRecord).getText().trim().contains("Showing 0 to 0 of 0 entries"),"Showing 0 to 0 of 0 entries");
 		clearSearchBox();
@@ -225,10 +288,10 @@ public class Program extends Constants {
 	public boolean commonDeleteMultipleAlertConfirmNo() throws InterruptedException {
 
 		//adding targeted multiple selected programs to be deleted in a list
-		targetedDeleteProgramNames = new ArrayList<String>();
-		targetedDeleteProgramNames.add(driver.findElement(programNameFirstRecord).getText().toLowerCase().trim());
-		targetedDeleteProgramNames.add(driver.findElement(programNameSecondRecord).getText().toLowerCase().trim());
-		System.out.println("targetedDeleteProgramNames "+targetedDeleteProgramNames);
+		targetedDeleteBatchNames = new ArrayList<String>();
+		targetedDeleteBatchNames.add(driver.findElement(batchNameFirstRecord).getText().toLowerCase().trim());
+		targetedDeleteBatchNames.add(driver.findElement(batchNameSecondRecord).getText().toLowerCase().trim());
+		System.out.println("targetedDeleteBatchNames "+targetedDeleteBatchNames);
 		
 		
 		// Get the current window handle
@@ -251,11 +314,11 @@ public class Program extends Constants {
 		Thread.sleep(1000);
 		
 		//check if selected programs are deleted from the data table
-		List<String> originalProgramNameList = getOriginalProgramNameList();
-		System.out.println("commonDeleteMultipleAlertConfirmNo getOriginalProgramNameList "+originalProgramNameList);
+		List<String> originalBatchNameList = getOriginalBatchNameList();
+		System.out.println("commonDeleteMultipleAlertConfirmNo getOriginalBatchNameList "+originalBatchNameList);
 
-		boolean isNotDeleted = originalProgramNameList.containsAll(targetedDeleteProgramNames);
-		System.out.println("Selected programs are Deleted "+isNotDeleted);
+		boolean isNotDeleted = originalBatchNameList.containsAll(targetedDeleteBatchNames);
+		System.out.println("Selected batches are Deleted "+isNotDeleted);
 //		selectMultipleProgramChk();//to uncheck the selected check boxes
 		
 		return isNotDeleted;
@@ -264,10 +327,10 @@ public class Program extends Constants {
 	public boolean clickXbuttonCofirmForm() throws InterruptedException {
 
 		//adding targeted multiple selected programs to be deleted in a list
-		targetedDeleteProgramNames = new ArrayList<String>();
-		targetedDeleteProgramNames.add(driver.findElement(programNameFirstRecord).getText().toLowerCase().trim());
-		targetedDeleteProgramNames.add(driver.findElement(programNameSecondRecord).getText().toLowerCase().trim());
-		System.out.println("targetedDeleteProgramNames "+targetedDeleteProgramNames);
+		targetedDeleteBatchNames = new ArrayList<String>();
+		targetedDeleteBatchNames.add(driver.findElement(batchNameFirstRecord).getText().toLowerCase().trim());
+		targetedDeleteBatchNames.add(driver.findElement(batchNameSecondRecord).getText().toLowerCase().trim());
+		System.out.println("targetedDeleteBatchNames "+targetedDeleteBatchNames);
 		
 		
 		// Get the current window handle
@@ -289,69 +352,69 @@ public class Program extends Constants {
         
 		Thread.sleep(1000);
 		
-		//check if selected programs are deleted from the data table
-		List<String> originalProgramNameList = getOriginalProgramNameList();
-		System.out.println("commonDeleteMultipleAlertConfirmNo getOriginalProgramNameList "+originalProgramNameList);
+		//check if selected batches are deleted from the data table
+		List<String> originalBatchNameList = getOriginalBatchNameList();
+		System.out.println("commonDeleteMultipleAlertConfirmNo getOriginalProgramNameList "+originalBatchNameList);
 
-		boolean isNotDeleted = originalProgramNameList.containsAll(targetedDeleteProgramNames);
+		boolean isNotDeleted = originalBatchNameList.containsAll(targetedDeleteBatchNames);
 		System.out.println("Selected programs are Deleted "+isNotDeleted);
 //		selectMultipleProgramChk();//to uncheck the selected check boxes
 		
 		return isNotDeleted;
 	}
 
-	////////////////////Program SearchBar Feature Scenarios method////////////////////////////
+	////////////////////Batch SearchBar Feature Scenarios method////////////////////////////
 	
-	public void searchProgram(String sheetname,String scenarioName) throws IOException, InterruptedException {
+	public void searchBatch(String sheetname,String scenarioName) throws IOException, InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		String programName = null;
-		String programDesc = null;
+		String batchName = null;
+		String batchDesc = null;
 		String status = null;
         // the column index we want to filter by (e.g., column 1)(0-based)
         int filterColumnIndex = 0;  
 		
         List<String> rowData = xlutils.getRowData(sheetname, filterColumnIndex, scenarioName);
-        programName = rowData.get(1);
-		programDesc = rowData.get(2);
+        batchName = rowData.get(1);
+		batchDesc = rowData.get(2);
 		status = rowData.get(3);
-		System.out.println("==================programName===== "+programName);
-		System.out.println("==================programDesc===== "+programDesc);
+		System.out.println("==================batchName===== "+batchName);
+		System.out.println("==================batchDesc===== "+batchDesc);
 		System.out.println("==================status===== "+status);
  		
 		clearSearchBox();
 		
-		if(scenarioName.equalsIgnoreCase("searchWithValidProgramName")) {
+		if(scenarioName.equalsIgnoreCase("searchWithValidBatchName")) {
 			
-			driver.findElement(searchTextBox).sendKeys(programName);
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(programNameFirstRecord));
+			driver.findElement(searchTextBox).sendKeys(batchName);
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(batchNameFirstRecord));
 			Thread.sleep(2000);
 
-			Assert.assertTrue(programName.equalsIgnoreCase(driver.findElement(programNameFirstRecord).getText().trim()));
-			Assert.assertTrue(programDesc.equalsIgnoreCase(driver.findElement(programDescFirstRecord).getText().trim()));
-			Assert.assertTrue(status.equalsIgnoreCase(driver.findElement(programStatusFirstRecord).getText().trim()));
+			Assert.assertTrue(batchName.equalsIgnoreCase(driver.findElement(batchNameFirstRecord).getText().trim()));
+			Assert.assertTrue(batchDesc.equalsIgnoreCase(driver.findElement(batchDescFirstRecord).getText().trim()));
+			Assert.assertTrue(status.equalsIgnoreCase(driver.findElement(batchStatusFirstRecord).getText().trim()));
 		}
-		else if(scenarioName.equalsIgnoreCase("searchWithValidProgramDesc")) {
-			driver.findElement(searchTextBox).sendKeys(programDesc);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(programNameFirstRecord));
+		else if(scenarioName.equalsIgnoreCase("searchWithValidBatchDesc")) {
+			driver.findElement(searchTextBox).sendKeys(batchDesc);
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(batchNameFirstRecord));
 	        Thread.sleep(2000);
 
-			Assert.assertTrue(programName.trim().equalsIgnoreCase(driver.findElement(programNameFirstRecord).getText().trim()));
-			Assert.assertTrue(programDesc.trim().equalsIgnoreCase(driver.findElement(programDescFirstRecord).getText().trim()));
-			Assert.assertTrue(status.trim().equalsIgnoreCase(driver.findElement(programStatusFirstRecord).getText().trim()));
+			Assert.assertTrue(batchName.trim().equalsIgnoreCase(driver.findElement(batchNameFirstRecord).getText().trim()));
+			Assert.assertTrue(batchDesc.trim().equalsIgnoreCase(driver.findElement(batchDescFirstRecord).getText().trim()));
+			Assert.assertTrue(status.trim().equalsIgnoreCase(driver.findElement(batchStatusFirstRecord).getText().trim()));
 		}
-		else if(scenarioName.equalsIgnoreCase("searchWithInvalidProgramName")) {
-			driver.findElement(searchTextBox).sendKeys(programName);
+		else if(scenarioName.equalsIgnoreCase("searchWithInvalidBatchName")) {
+			driver.findElement(searchTextBox).sendKeys(batchName);
 	        wait.until(ExpectedConditions.textToBePresentInElementLocated(paginationTextwithZeroRecord, "Showing 0 to 0 of 0 entries"));
 			Assert.assertTrue(driver.findElement(paginationTextwithZeroRecord).getText().trim().contains("Showing 0 to 0 of 0 entries"));
 		}
-		else if(scenarioName.equalsIgnoreCase("searchWithPartialProgramName")) {
-			driver.findElement(searchTextBox).sendKeys(programName);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(programNameFirstRecord));
+		else if(scenarioName.equalsIgnoreCase("searchWithPartialBatchName")) {
+			driver.findElement(searchTextBox).sendKeys(batchName);
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(batchNameFirstRecord));
 
-			Assert.assertTrue(driver.findElement(programNameFirstRecord).getText().trim().contains(programName.trim()));
-			Assert.assertTrue(programDesc.trim().equalsIgnoreCase(driver.findElement(programDescFirstRecord).getText().trim()));
-			Assert.assertTrue(status.trim().equalsIgnoreCase(driver.findElement(programStatusFirstRecord).getText().trim()));
+			Assert.assertTrue(driver.findElement(batchNameFirstRecord).getText().trim().contains(batchName.trim()));
+			Assert.assertTrue(batchDesc.trim().equalsIgnoreCase(driver.findElement(batchDescFirstRecord).getText().trim()));
+			Assert.assertTrue(status.trim().equalsIgnoreCase(driver.findElement(batchStatusFirstRecord).getText().trim()));
 			clearSearchBox();
 			Thread.sleep(1000);
 			driver.findElement(searchTextBox).sendKeys(" ");
@@ -360,104 +423,104 @@ public class Program extends Constants {
 	}
 ///////////////////////////////////////////////////////////////////////////
 	
-/////////////////////////////////Program Sorting Feature Methods/////////////////////////////////////////////////
+/////////////////////////////////Batch Sorting Feature Methods/////////////////////////////////////////////////
 	
-	public void clickProgramNameColumnHeader() {
+	public void clickBatchNameColumnHeader() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		WebElement programNameColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(programNameColumnHeader));
+		WebElement programNameColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(batchNameColumnHeader));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", programNameColumnHeaderElement);
 	}
-	public List<String> getSortedProgramNameListAsc() {
+	public List<String> getSortedBatchNameListAsc() {
 		
 		  //sort on the original list  ->sorted list in Ascending order
-		  List<String> sortedlList = getOriginalProgramNameList().stream().sorted().collect(Collectors.toList());
+		  List<String> sortedlList = getOriginalBatchNameList().stream().sorted().collect(Collectors.toList());
 		  System.out.println("sortedlList "+sortedlList);
 
 		  return sortedlList;
 
 	}
 		
-	public List<String> getSortedProgramNameListDesc() {
+	public List<String> getSortedBatchNameListDesc() {
 		
 		  //sort on the original list  ->sorted list in Descending order
-		  List<String> sortedlListdesc = getOriginalProgramNameList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+		  List<String> sortedlListdesc = getOriginalBatchNameList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 		  System.out.println("sortedlList desc "+sortedlListdesc);
 
 		  return sortedlListdesc;
 
 	}
-	public void clickProgramDescColumnHeader() {
+	public void clickBatchDescColumnHeader() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		WebElement programDescColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(programDescColumnHeader));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", programDescColumnHeaderElement);
+		WebElement batchDescColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(batchDescColumnHeader));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", batchDescColumnHeaderElement);
 	}
 	
-	public List<String> getOriginalProgramDescList() {
+	public List<String> getOriginalBatchDescList() {
 	  //capture all the web elements into list
-	  List<WebElement> elementsList = driver.findElements(programDescList);
+	  List<WebElement> elementsList = driver.findElements(batchDescList);
 	  
 	  //capture text of all elements into new(original) list
-	  List<String> originalProgramDescriptionList = elementsList.stream().map(s->s.getText().toLowerCase().trim()).collect(Collectors.toList());
-	  System.out.println("originalProgramDescList "+originalProgramDescriptionList);
-	  return originalProgramDescriptionList;
+	  List<String> originalBatchDescriptionList = elementsList.stream().map(s->s.getText().toLowerCase().trim()).collect(Collectors.toList());
+	  System.out.println("originalBatchDescList "+originalBatchDescriptionList);
+	  return originalBatchDescriptionList;
 }
 
-	public List<String> getSortedProgramDescriptionListAsc() {
+	public List<String> getSortedBatchDescriptionListAsc() {
 		
 		  //sort on the original list ->sorted list in Ascending order
-		  List<String> desiredlList = getOriginalProgramDescList();
+		  List<String> desiredlList = getOriginalBatchDescList();
 	        // Sort the list
 	        Collections.sort(desiredlList);
 	        
-	        System.out.println("getSortedProgramDescriptionListAsc "+desiredlList);  
+	        System.out.println("getSortedBatchDescriptionListAsc "+desiredlList);  
 
 		  return desiredlList;
 
 	}
 
-	public List<String> getSortedProgramDescriptionListDesc() {
+	public List<String> getSortedBatchDescriptionListDesc() {
 		
 		  //sort on the original list ->sorted list in Descending order
-		  List<String> sortedlListdesc = getOriginalProgramDescList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-		  System.out.println("getSortedProgramDescriptionListDesc sortedlList desc "+sortedlListdesc);
+		  List<String> sortedlListdesc = getOriginalBatchDescList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+		  System.out.println("getSortedBatchDescriptionListDesc sortedlList desc "+sortedlListdesc);
 
 		  return sortedlListdesc;
 
 	}
-	public void clickProgramStatusColumnHeader() {
+	public void clickBatchStatusColumnHeader() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		WebElement programStatusColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(programStatuscColumnHeader));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", programStatusColumnHeaderElement);
+		WebElement batchStatusColumnHeaderElement = wait.until(ExpectedConditions.elementToBeClickable(batchStatuscColumnHeader));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", batchStatusColumnHeaderElement);
 	}
 	
-	public List<String> getOriginalProgramStatusList() {
+	public List<String> getOriginalBatchStatusList() {
 		  //capture all the web elements into list
-		  List<WebElement> elementsList = driver.findElements(programStatusList);
+		  List<WebElement> elementsList = driver.findElements(batchStatusList);
 		  
 		  //capture text of all elements into new(original) list
-		  List<String> originalProgramStatusList = elementsList.stream().map(s->s.getText().toLowerCase().trim()).collect(Collectors.toList());
-		  System.out.println("originalProgramStatusList "+originalProgramStatusList);
-		  return originalProgramStatusList;
+		  List<String> originalBatchStatusList = elementsList.stream().map(s->s.getText().toLowerCase().trim()).collect(Collectors.toList());
+		  System.out.println("originalBatchStatusList "+originalBatchStatusList);
+		  return originalBatchStatusList;
 	}
 
-		public List<String> getSortedProgramStatusListAsc() {
+		public List<String> getSortedBatchStatusListAsc() {
 			
 			  //sort on the original list->sorted list in Ascending order
-			  List<String> desiredlList = getOriginalProgramStatusList();
+			  List<String> desiredlList = getOriginalBatchStatusList();
 		        // Sort the list
 		        Collections.sort(desiredlList);
 		        
-		        System.out.println("getSortedProgramStatusListAsc "+desiredlList);  
+		        System.out.println("getSortedBatchStatusListAsc "+desiredlList);  
 
 			  return desiredlList;
 
 		}
 
-		public List<String> getSortedProgramStatusListDesc() {
+		public List<String> getSortedBatchStatusListDesc() {
 			
 			  //sort on the original list->sorted list in Descending order
-			  List<String> sortedlListdesc = getOriginalProgramStatusList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-			  System.out.println("getSortedProgramDescriptionListDesc sortedlList desc "+sortedlListdesc);
+			  List<String> sortedlListdesc = getOriginalBatchStatusList().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+			  System.out.println("getSortedBatchDescriptionListDesc sortedlList desc "+sortedlListdesc);
 
 			  return sortedlListdesc;
 
@@ -468,7 +531,7 @@ public class Program extends Constants {
 		
 		public void clickNextLink()
 		{
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement nextBtnElement = wait.until(ExpectedConditions.elementToBeClickable(nextBtn));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextBtnElement);
 		}
@@ -476,7 +539,7 @@ public class Program extends Constants {
 		public boolean isActiveNextLink()
 		{
 	        // Wait for the table to reload with the next page records
-	        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@role='grid']")));
 
 	        boolean isNextEnabled ;
@@ -505,7 +568,7 @@ public class Program extends Constants {
 		public boolean isActiveLastLink()
 		{
 	        // Wait for the table to reload with the Last page records
-	        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@role='grid']")));
 
 			
@@ -531,7 +594,7 @@ public class Program extends Constants {
 		
 		public void clickFirstLink()
 		{
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			WebElement firstBtnElement = wait.until(ExpectedConditions.elementToBeClickable(firstBtn));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstBtnElement);
 		}
@@ -576,7 +639,7 @@ public class Program extends Constants {
 	        System.out.println("isOneButtonHighlighted "+isOneButtonHighlighted);  
 
 	        boolean isFirstPage;
-	        if(isOneButtonHighlighted && getOriginalProgramNameList().size()>0)
+	        if(isOneButtonHighlighted && getOriginalBatchNameList().size()>0)
 	        {
 	        	isFirstPage = true;
 	        }

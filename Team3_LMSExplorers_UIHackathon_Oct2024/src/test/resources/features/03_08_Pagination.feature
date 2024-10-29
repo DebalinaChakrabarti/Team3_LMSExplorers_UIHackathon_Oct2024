@@ -1,3 +1,4 @@
+@program
 Feature: Pagination
 
 	Background: Admin is on the Manage Program Page after logged in
@@ -7,13 +8,12 @@ Feature: Pagination
 
 
 
-  #@tag1
   Scenario: Verify Next page link
     Given Admin is on Manage Program page in program module
     When Admin clicks Next page link on the program table 
     Then Admin should see the Pagination has "Next" active link on the program table
 
-  #@tag2
+ 
   Scenario: Verify Last page link
     Given Admin is on Manage Program page in program module
     When Admin clicks Last page link on the program table

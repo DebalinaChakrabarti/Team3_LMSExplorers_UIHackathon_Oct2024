@@ -40,7 +40,6 @@ public class PaginationSteps extends Constants{
 	@When("Admin clicks Next page link on the program table")
 	public void admin_clicks_next_page_link_on_the_program_table() throws InterruptedException {
 		log.info("PaginationSteps---Admin clicks Next page link on the program table");
-//		Thread.sleep(1000);
 		program.clickNextLink();
 	}
 
@@ -84,7 +83,6 @@ public class PaginationSteps extends Constants{
 	public void admin_is_on_previous_program_page() {
 		log.info("PaginationSteps---Admin is on Previous Program page");
 		Assert.assertTrue(program.isActivePreviousLink() && program.isActiveNextLink(),"Admin is on Previous Program page");
-//		Assert.assertTrue(program.isActiveNextLink(),"Next Page link is Enabled");
 	}
 
 	@When("Admin clicks First page link on the program table")

@@ -1,8 +1,8 @@
+@program
 Feature: Manage Program Search Bar
  
 	Background: Admin is on the Manage Program Page after logged in
     Given Check if Admin is logged in or not for the Program Mdule
-    #When Admin clicks on "Program" on the Navigation Bar to reach the Program module
     Then Admin should be on Manage Program Page in program module
 
 

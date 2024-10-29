@@ -1,3 +1,4 @@
+@program
 Feature: Multiple Delete Program
  
 	Scenario: Admin is on the Manage Program Page after logged in
