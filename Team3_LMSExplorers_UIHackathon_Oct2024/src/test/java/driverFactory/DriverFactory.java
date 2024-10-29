@@ -12,7 +12,7 @@ import utilities.Constants;
 
 public class DriverFactory extends Constants {
 
-	public final static int TIMEOUT = 50;
+	public final static int TIMEOUT = 10;
 	
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	
