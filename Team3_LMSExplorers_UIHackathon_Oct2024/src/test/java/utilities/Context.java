@@ -12,11 +12,8 @@ import pageObjects.ClassPageValidation;
 import pageObjects.ClassPg;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
-<<<<<<< HEAD
 import pageObjects.LogoutPage;
 import pageObjects.Program;
-=======
->>>>>>> 3a514e7c9e907535b88932284d833ab350f0ad59
 import pageObjects.ProgramPage;
 
 public class Context {
